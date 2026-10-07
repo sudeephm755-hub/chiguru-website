@@ -1,20 +1,2073 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Chiguru 2026</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chiguru 2026 | Cambridge Institute of Technology</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8f4;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background:
+                linear-gradient(135deg, #0b3d20, #176b36, #2e8b57);
+            color: white;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 42px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 17px;
+            opacity: 0.9;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(8, 45, 23, 0.97);
+            padding: 14px 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 5px 10px;
+            padding: 9px 14px;
+            border-radius: 20px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #2e8b57;
+        }
+
+        .login-nav {
+            background: #f5c542;
+            color: #17351f !important;
+            font-weight: bold;
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #14532d;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            border: none;
+            background: #176b36;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #0d4d26;
+            transform: translateY(-2px);
+        }
+
+        /* ================= HOME ================= */
+
+        .hero {
+            min-height: 620px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(circle at top left, #d9f5df, transparent 40%),
+                radial-gradient(circle at bottom right, #ccebd4, transparent 40%),
+                #f8fff9;
+
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #dff5e5;
+            color: #176b36;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 62px;
+            color: #0b3d20;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #176b36;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #52616b;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+        }
+
+        .hero-buttons .button {
+            margin: 5px;
+        }
+
+        .secondary-button {
+            background: white;
+            color: #176b36;
+            border: 2px solid #176b36;
+        }
+
+        .secondary-button:hover {
+            background: #e8f5eb;
+        }
+
+        /* ================= EVENTS ================= */
+
+        #events {
+            background: white;
+        }
+
+        .event-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 25px;
+        }
+
+        .event-card {
+            background: #f8fbf8;
+            padding: 32px 25px;
+            border-radius: 18px;
+
+            text-align: center;
+
+            border: 1px solid #e1ebe3;
+
+            transition: 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(20, 83, 45, 0.13);
+        }
+
+        .event-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: auto auto 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #dff5e5;
+            border-radius: 50%;
+
+            font-size: 32px;
+        }
+
+        .event-card h3 {
+            color: #14532d;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .event-card p {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        /* ================= GALLERY ================= */
+
+        #gallery {
+            background: #f3f8f4;
+        }
+
+        .gallery-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 22px;
+        }
+
+        .gallery-card {
+            min-height: 190px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: linear-gradient(
+                135deg,
+                #dff5e5,
+                #ffffff
+            );
+
+            border: 1px solid #d5e6d9;
+
+            transition: 0.3s;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .gallery-card h3 {
+            color: #14532d;
+        }
+
+        /* ================= REGISTRATION ================= */
+
+        .registration {
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf7ed,
+                    #f7fbf8
+                );
+        }
+
+        .form-container {
+            max-width: 850px;
+            margin: auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 45px rgba(20, 83, 45, 0.12);
+        }
+
+        .form-intro {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #64748b;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+            color: #334155;
+        }
+
+        .required {
+            color: #dc2626;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            background: white;
+
+            transition: 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #176b36;
+
+            box-shadow:
+                0 0 0 3px rgba(23, 107, 54, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        #other-college-group {
+            display: none;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .submit-button {
+            min-width: 230px;
+            font-size: 16px;
+        }
+
+        /* ================= HELP ================= */
+
+        #help {
+            background: white;
+        }
+
+        .help-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 22px;
+        }
+
+        .help-card {
+            padding: 28px;
+
+            background: #f7faf8;
+
+            border-radius: 16px;
+
+            border: 1px solid #e0ebe3;
+        }
+
+        .help-card h3 {
+            color: #14532d;
+            margin-bottom: 10px;
+        }
+
+        .help-card p {
+            color: #64748b;
+        }
+
+        .faq {
+            max-width: 850px;
+            margin: 35px auto 0;
+        }
+
+        .faq-item {
+            padding: 18px 20px;
+            border-bottom: 1px solid #dce6df;
+        }
+
+        .faq-item h4 {
+            color: #14532d;
+            margin-bottom: 5px;
+        }
+
+        /* ================= LOGIN ================= */
+
+        #login {
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf7ed,
+                    #ffffff
+                );
+        }
+
+        .login-container {
+            max-width: 430px;
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 45px rgba(20, 83, 45, 0.12);
+        }
+
+        .login-icon {
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 20px;
+
+            background: #dff5e5;
+            border-radius: 50%;
+
+            font-size: 32px;
+        }
+
+        .login-container h3 {
+            text-align: center;
+            color: #14532d;
+            margin-bottom: 8px;
+        }
+
+        .login-note {
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .login-button {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        #about {
+            background: #0b3d20;
+            color: white;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-container h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            color: #d9eadf;
+        }
+
+        .about-highlight {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 18px;
+
+            margin-top: 35px;
+        }
+
+        .highlight {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+        }
+
+        .highlight strong {
+            display: block;
+            font-size: 25px;
+            color: white;
+        }
+
+        .highlight span {
+            color: #ccebd4;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #062b16;
+            color: #ccebd4;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 700px) {
+
+            .logo {
+                font-size: 32px;
+            }
+
+            nav {
+                padding: 10px;
+            }
+
+            nav a {
+                font-size: 13px;
+                margin: 3px;
+                padding: 7px 9px;
+            }
+
+            .hero {
+                min-height: 520px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 60px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .form-container {
+                padding: 25px 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .about-container h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>🌱 CHIGURU 2026</h1>
+    <!-- ================= HEADER ================= -->
 
-    <h2>College Cultural Fest</h2>
+    <header>
+        <div class="logo">
+            🌱 CHIGURU <span id="year"></span>
+        </div>
 
-    <p>
-        Celebrating talent, creativity and togetherness.
-    </p>
+        <p>
+            Cambridge Institute of Technology
+        </p>
+    </header>
 
-    <button>Explore Events</button>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#events">Events</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#registration">Register</a>
+
+        <a href="#help">Help</a>
+
+        <a href="#login" class="login-nav">Login</a>
+
+        <a href="#about">About</a>
+
+    </nav>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                🌱 Cambridge Institute of Technology
+            </span>
+
+            <h1>
+                CHIGURU
+            </h1>
+
+            <h2>
+                Where Talent Meets Celebration
+            </h2>
+
+            <p>
+                Celebrating talent, creativity, friendship
+                and togetherness through exciting cultural
+                events and competitions.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#events" class="button">
+                    Explore Events
+                </a>
+
+                <a
+                    href="#registration"
+                    class="button secondary-button">
+                    Register Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EVENTS ================= -->
+
+    <section id="events">
+
+        <div class="section-title">
+
+            <h2>
+                Chiguru Events
+            </h2>
+
+            <p>
+                Choose your favourite event and
+                showcase your talent.
+            </p>
+
+        </div>
+
+
+        <div class="event-container">
+
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    💃
+                </div>
+
+                <h3>
+                    Dance
+                </h3>
+
+                <p>
+                    Show your talent through
+                    dance and performance.
+                </p>
+
+                <a
+                    href="#registration"
+                    class="button">
+                    Register
+                </a>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    🎤
+                </div>
+
+                <h3>
+                    Singing
+                </h3>
+
+                <p>
+                    Showcase your voice and
+                    musical talent.
+                </p>
+
+                <a
+                    href="#registration"
+                    class="button">
+                    Register
+                </a>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Art
+                </h3>
+
+                <p>
+                    Express your creativity
+                    through art.
+                </p>
+
+                <a
+                    href="#registration"
+                    class="button">
+                    Register
+                </a>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    📷
+                </div>
+
+                <h3>
+                    Photography
+                </h3>
+
+                <p>
+                    Capture moments and
+                    showcase your photography skills.
+                </p>
+
+                <a
+                    href="#registration"
+                    class="button">
+                    Register
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section id="gallery">
+
+        <div class="section-title">
+
+            <h2>
+                Chiguru Gallery
+            </h2>
+
+            <p>
+                Moments, performances and memories
+                from Chiguru.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-container">
+
+
+            <div class="gallery-card">
+
+                <div class="gallery-icon">
+                    📸
+                </div>
+
+                <h3>
+                    Chiguru Moments
+                </h3>
+
+            </div>
+
+
+            <div class="gallery-card">
+
+                <div class="gallery-icon">
+                    🎭
+                </div>
+
+                <h3>
+                    Cultural Events
+                </h3>
+
+            </div>
+
+
+            <div class="gallery-card">
+
+                <div class="gallery-icon">
+                    🎤
+                </div>
+
+                <h3>
+                    Performances
+                </h3>
+
+            </div>
+
+
+            <div class="gallery-card">
+
+                <div class="gallery-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Competitions
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REGISTRATION ================= -->
+
+    <section
+        class="registration"
+        id="registration">
+
+        <div class="section-title">
+
+            <h2>
+                Chiguru Registration
+            </h2>
+
+            <p>
+                Fill in your details to register
+                for your favourite event.
+            </p>
+
+        </div>
+
+
+        <div class="form-container">
+
+            <p class="form-intro">
+                All fields marked with
+                <span class="required">*</span>
+                are required.
+            </p>
+
+
+            <form id="registration-form">
+
+                <div class="form-grid">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Full Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="full-name"
+                            required
+                            placeholder="Enter your full name">
+
+                    </div>
+
+
+                    <!-- USN -->
+
+                    <div class="form-group">
+
+                        <label>
+                            USN
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="usn"
+                            required
+                            placeholder="Enter your USN">
+
+                    </div>
+
+
+                    <!-- DEPARTMENT -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Department
+                            <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="department"
+                            required>
+
+                            <option value="">
+                                -- Select Department --
+                            </option>
+
+                            <option>
+                                Information Science and Engineering
+                            </option>
+
+                            <option>
+                                Computer Science and Engineering
+                            </option>
+
+                            <option>
+                                Electronics and Communication Engineering
+                            </option>
+
+                            <option>
+                                Mechanical Engineering
+                            </option>
+
+                            <option>
+                                Civil Engineering
+                            </option>
+
+                            <option>
+                                Electrical and Electronics Engineering
+                            </option>
+
+                            <option>
+                                Artificial Intelligence and Machine Learning
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- DISTRICT -->
+
+                    <div class="form-group">
+
+                        <label>
+                            District
+                            <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="district"
+                            required>
+
+                            <option value="">
+                                -- Select District --
+                            </option>
+
+                            <option value="Bengaluru">
+                                Bengaluru
+                            </option>
+
+                            <option value="Kolar">
+                                Kolar
+                            </option>
+
+                            <option value="Chikkaballapur">
+                                Chikkaballapur
+                            </option>
+
+                            <option value="Tumakuru">
+                                Tumakuru
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- COLLEGE -->
+
+                    <div class="form-group full-width">
+
+                        <label>
+                            College Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="college"
+                            required
+                            disabled>
+
+                            <option value="">
+                                -- Select College --
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- OTHER COLLEGE -->
+
+                    <div
+                        class="form-group full-width"
+                        id="other-college-group">
+
+                        <label>
+                            Enter College Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="other-college-name"
+                            placeholder="Enter your college name">
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="form-group full-width">
+
+                        <label>
+                            College Address
+
+                            <span
+                                class="required"
+                                id="address-required-star"
+                                style="display:none;">
+                                *
+                            </span>
+
+                        </label>
+
+                        <textarea
+                            id="college-address"
+                            rows="3"
+                            placeholder="College address"
+                            readonly></textarea>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Email
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                            placeholder="Enter your email">
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            required
+                            placeholder="Enter phone number">
+
+                    </div>
+
+
+                    <!-- EVENT -->
+
+                    <div class="form-group full-width">
+
+                        <label>
+                            Select Event
+                            <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="event"
+                            required>
+
+                            <option value="">
+                                -- Select Event --
+                            </option>
+
+                            <option value="Dance">
+                                Dance
+                            </option>
+
+                            <option value="Singing">
+                                Singing
+                            </option>
+
+                            <option value="Art">
+                                Art
+                            </option>
+
+                            <option value="Photography">
+                                Photography
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="submit-container">
+
+                    <button
+                        type="submit"
+                        class="button submit-button">
+
+                        Submit Registration
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HELP ================= -->
+
+    <section id="help">
+
+        <div class="section-title">
+
+            <h2>
+                Help & Support
+            </h2>
+
+            <p>
+                Need help with registration?
+                Check the information below.
+            </p>
+
+        </div>
+
+
+        <div class="help-container">
+
+
+            <div class="help-card">
+
+                <h3>
+                    📝 Registration
+                </h3>
+
+                <p>
+                    Select your district first.
+                    Then choose your college and
+                    complete the registration form.
+                </p>
+
+            </div>
+
+
+            <div class="help-card">
+
+                <h3>
+                    🏫 College
+                </h3>
+
+                <p>
+                    Select your college from the
+                    list. If your college is not
+                    listed, choose Other College.
+                </p>
+
+            </div>
+
+
+            <div class="help-card">
+
+                <h3>
+                    🎭 Events
+                </h3>
+
+                <p>
+                    Choose the event you want to
+                    participate in before submitting
+                    your registration.
+                </p>
+
+            </div>
+
+
+            <div class="help-card">
+
+                <h3>
+                    💻 Technical Help
+                </h3>
+
+                <p>
+                    If you experience a problem
+                    while registering, contact the
+                    Chiguru organizing team.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-item">
+
+                <h4>
+                    Why can't I select a college?
+                </h4>
+
+                <p>
+                    Select a district first.
+                    The college list will then
+                    become available.
+                </p>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <h4>
+                    What if my college isn't listed?
+                </h4>
+
+                <p>
+                    Select "Other College" and
+                    enter your college name and
+                    address.
+                </p>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <h4>
+                    Can I register for an event?
+                </h4>
+
+                <p>
+                    Select your preferred event
+                    in the registration form and
+                    submit your details.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LOGIN ================= -->
+
+    <section id="login">
+
+        <div class="section-title">
+
+            <h2>
+                Chiguru Login
+            </h2>
+
+            <p>
+                Login functionality will be connected
+                to the backend in a later stage.
+            </p>
+
+        </div>
+
+
+        <div class="login-container">
+
+            <div class="login-icon">
+                🔐
+            </div>
+
+            <h3>
+                Welcome Back
+            </h3>
+
+            <p class="login-note">
+                Login system is currently
+                frontend-only.
+            </p>
+
+
+            <form id="login-form">
+
+                <div class="form-group">
+
+                    <label>
+                        Email / Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="login-username"
+                        required
+                        placeholder="Enter email or username">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="login-password"
+                        required
+                        placeholder="Enter password">
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button login-button">
+
+                    Login
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <div class="about-container">
+
+            <h2>
+                About Chiguru
+            </h2>
+
+            <p>
+                Chiguru is the annual cultural celebration
+                of Cambridge Institute of Technology.
+            </p>
+
+            <p>
+                It brings together students to showcase
+                their talent, creativity and passion
+                through cultural performances,
+                competitions and exciting activities.
+            </p>
+
+            <p>
+                Chiguru is a celebration of talent,
+                friendship, creativity and
+                unforgettable memories.
+            </p>
+
+
+            <div class="about-highlight">
+
+                <div class="highlight">
+
+                    <strong>
+                        🌱
+                    </strong>
+
+                    <span>
+                        Talent
+                    </span>
+
+                </div>
+
+
+                <div class="highlight">
+
+                    <strong>
+                        🎭
+                    </strong>
+
+                    <span>
+                        Creativity
+                    </span>
+
+                </div>
+
+
+                <div class="highlight">
+
+                    <strong>
+                        🤝
+                    </strong>
+
+                    <span>
+                        Togetherness
+                    </span>
+
+                </div>
+
+
+                <div class="highlight">
+
+                    <strong>
+                        🏆
+                    </strong>
+
+                    <span>
+                        Celebration
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © <span id="footer-year"></span>
+            Chiguru
+        </p>
+
+        <p>
+            Cambridge Institute of Technology
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* ================= YEAR ================= */
+
+        const currentYear =
+            new Date().getFullYear();
+
+        document.getElementById("year").textContent =
+            currentYear;
+
+        document.getElementById("footer-year").textContent =
+            currentYear;
+
+
+        /* ================= COLLEGES ================= */
+
+        const colleges = {
+
+            Bengaluru: [
+
+                "Cambridge Institute of Technology",
+
+                "Acharya Institute of Technology",
+
+                "A.P.S. College of Engineering",
+
+                "CMR Institute of Technology",
+
+                "JSS Academy of Technical Education",
+
+                "KNS Institute of Technology",
+
+                "HKBK College of Engineering",
+
+                "East West College of Engineering",
+
+                "Atria Institute of Technology",
+
+                "Gopalan College of Engineering and Management",
+
+                "Dr. Ambedkar Institute of Technology",
+
+                "Sapthagiri College of Engineering",
+
+                "Dr. ACS College of Engineering",
+
+                "R.R. Institute of Technology",
+
+                "Vemana Institute of Technology",
+
+                "MVJ College of Engineering",
+
+                "Sri Krishna Institute of Technology"
+
+            ],
+
+            Kolar: [
+
+                "C. Byregowda Institute of Technology",
+
+                "Dr. T. Thimmaiah Institute of Technology"
+
+            ],
+
+            Chikkaballapur: [
+
+                "S J C Institute of Technology",
+
+                "Sha-Shib College of Engineering"
+
+            ],
+
+            Tumakuru: [
+
+                "Siddaganga Institute of Technology",
+
+                "Channabasaveshwara Institute of Technology",
+
+                "Akshaya Institute of Technology",
+
+                "Kalpataru Institute of Technology",
+
+                "Shridevi Institute of Engineering and Technology",
+
+                "Sri Siddhartha School of Engineering"
+
+            ]
+
+        };
+
+
+        /* ================= COLLEGE ADDRESSES ================= */
+
+        const collegeAddresses = {
+
+            "Cambridge Institute of Technology":
+                "KR Puram, Bengaluru, Karnataka",
+
+            "Acharya Institute of Technology":
+                "Soladevanahalli, Bengaluru, Karnataka",
+
+            "A.P.S. College of Engineering":
+                "Somanahalli, Bengaluru, Karnataka",
+
+            "CMR Institute of Technology":
+                "ITPL Main Road, Bengaluru, Karnataka",
+
+            "JSS Academy of Technical Education":
+                "Uttarahalli, Bengaluru, Karnataka",
+
+            "KNS Institute of Technology":
+                "Bengaluru, Karnataka",
+
+            "HKBK College of Engineering":
+                "Nagawara, Bengaluru, Karnataka",
+
+            "East West College of Engineering":
+                "Bengaluru, Karnataka",
+
+            "Atria Institute of Technology":
+                "Hebbal, Bengaluru, Karnataka",
+
+            "Dr. Ambedkar Institute of Technology":
+                "Nagarabhavi, Bengaluru, Karnataka",
+
+            "MVJ College of Engineering":
+                "Whitefield, Bengaluru, Karnataka",
+
+            "Siddaganga Institute of Technology":
+                "Tumakuru, Karnataka",
+
+            "Channabasaveshwara Institute of Technology":
+                "Tumakuru, Karnataka"
+
+        };
+
+
+        /* ================= ELEMENTS ================= */
+
+        const districtSelect =
+            document.getElementById("district");
+
+        const collegeSelect =
+            document.getElementById("college");
+
+        const addressField =
+            document.getElementById("college-address");
+
+        const otherCollegeGroup =
+            document.getElementById("other-college-group");
+
+        const otherCollegeName =
+            document.getElementById("other-college-name");
+
+        const addressRequiredStar =
+            document.getElementById(
+                "address-required-star"
+            );
+
+        const registrationForm =
+            document.getElementById(
+                "registration-form"
+            );
+
+
+        /* ================= DISTRICT ================= */
+
+        districtSelect.addEventListener(
+            "change",
+            function () {
+
+                const district =
+                    districtSelect.value;
+
+
+                collegeSelect.innerHTML =
+                    '<option value="">-- Select College --</option>';
+
+                addressField.value = "";
+
+                addressField.readOnly = true;
+
+                addressField.required = false;
+
+                otherCollegeGroup.style.display =
+                    "none";
+
+                otherCollegeName.value = "";
+
+                otherCollegeName.required = false;
+
+                addressRequiredStar.style.display =
+                    "none";
+
+
+                if (!district) {
+
+                    collegeSelect.disabled = true;
+
+                    return;
+
+                }
+
+
+                collegeSelect.disabled = false;
+
+
+                colleges[district].forEach(
+                    function (college) {
+
+                        const option =
+                            document.createElement(
+                                "option"
+                            );
+
+                        option.value = college;
+
+                        option.textContent = college;
+
+                        collegeSelect.appendChild(
+                            option
+                        );
+
+                    }
+                );
+
+
+                const otherOption =
+                    document.createElement(
+                        "option"
+                    );
+
+                otherOption.value = "other";
+
+                otherOption.textContent =
+                    "Other College";
+
+                collegeSelect.appendChild(
+                    otherOption
+                );
+
+            }
+        );
+
+
+        /* ================= COLLEGE ================= */
+
+        collegeSelect.addEventListener(
+            "change",
+            function () {
+
+                const college =
+                    collegeSelect.value;
+
+
+                if (college === "other") {
+
+                    otherCollegeGroup.style.display =
+                        "block";
+
+                    otherCollegeName.required =
+                        true;
+
+                    addressField.readOnly =
+                        false;
+
+                    addressField.required =
+                        true;
+
+                    addressRequiredStar.style.display =
+                        "inline";
+
+                    addressField.value = "";
+
+                }
+
+                else {
+
+                    otherCollegeGroup.style.display =
+                        "none";
+
+                    otherCollegeName.required =
+                        false;
+
+                    otherCollegeName.value = "";
+
+                    addressRequiredStar.style.display =
+                        "none";
+
+
+                    if (collegeAddresses[college]) {
+
+                        addressField.value =
+                            collegeAddresses[college];
+
+                        addressField.readOnly =
+                            true;
+
+                        addressField.required =
+                            false;
+
+                    }
+
+                    else {
+
+                        addressField.value = "";
+
+                        addressField.readOnly =
+                            false;
+
+                        addressField.required =
+                            false;
+
+                    }
+
+                }
+
+            }
+        );
+
+
+        /* ================= REGISTRATION ================= */
+
+        registrationForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                let collegeName =
+                    collegeSelect.value;
+
+
+                if (collegeName === "other") {
+
+                    collegeName =
+                        otherCollegeName.value;
+
+                }
+
+
+                const registrationData = {
+
+                    fullName:
+                        document.getElementById(
+                            "full-name"
+                        ).value,
+
+                    usn:
+                        document.getElementById(
+                            "usn"
+                        ).value,
+
+                    department:
+                        document.getElementById(
+                            "department"
+                        ).value,
+
+                    district:
+                        districtSelect.value,
+
+                    collegeName:
+                        collegeName,
+
+                    collegeAddress:
+                        addressField.value,
+
+                    email:
+                        document.getElementById(
+                            "email"
+                        ).value,
+
+                    phoneNumber:
+                        document.getElementById(
+                            "phone"
+                        ).value,
+
+                    event:
+                        document.getElementById(
+                            "event"
+                        ).value
+
+                };
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "http://localhost:8080/api/registrations",
+                            {
+
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body:
+                                    JSON.stringify(
+                                        registrationData
+                                    )
+
+                            }
+                        );
+
+
+                    if (response.ok) {
+
+                        alert(
+                            "Registration successful!"
+                        );
+
+
+                        registrationForm.reset();
+
+
+                        collegeSelect.innerHTML =
+                            '<option value="">-- Select College --</option>';
+
+                        collegeSelect.disabled =
+                            true;
+
+
+                        addressField.value = "";
+
+                        addressField.readOnly =
+                            true;
+
+                        addressField.required =
+                            false;
+
+
+                        otherCollegeGroup.style.display =
+                            "none";
+
+                        otherCollegeName.value =
+                            "";
+
+                        otherCollegeName.required =
+                            false;
+
+
+                        addressRequiredStar.style.display =
+                            "none";
+
+                    }
+
+                    else {
+
+                        alert(
+                            "Registration failed. Please try again."
+                        );
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    console.error(
+                        "Error connecting to backend:",
+                        error
+                    );
+
+                    alert(
+                        "Could not connect to the server. Please make sure the Chiguru backend is running."
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* ================= LOGIN ================= */
+
+        const loginForm =
+            document.getElementById(
+                "login-form"
+            );
+
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                alert(
+                    "Login system will be connected to the backend soon."
+                );
+
+            }
+        );
+
+    </script>
 
 </body>
+
 </html>
